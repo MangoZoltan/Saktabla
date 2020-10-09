@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Saktábla</title>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #sakktabla{
+            margin: auto;
+            margin-top: 50px;
+        }
+        
+        #sakktabla td{
+            width: 70px;
+            height: 70px;
+            
+        }
+      /*  #sakktabla tr:nth-child(odd) td:nth-child(odd), #sakktabla tr:nth-child(even) td:nth-child(even){
+            background-color: black;
+            
+        }*/
+
+        /* tr:first-of-type, tr:last-of-type{
+            background-color: black;
+        }
+        #sakktabla tr:first-of-type td, #sakktabla tr:last-of-type td{
+            border: 1px solid white;
+        }
+        tr td:first-of-type, tr td:last-of-type{
+            background-color: black;
+            
+        }
+        #sakktabla tr td:first-of-type, #sakktabla tr td:last-of-type{
+            
+            border: 1px solid white;
+        }
+         */
+
+         tr td:first-of-type, tr td:last-of-type{
+            background-color: black;
+            border: 1px solid white;
+        }
+        tr td:nth-child(2){
+           border-left: none;
+        }
+        tr td:nth-child(7){
+            border-right: none;
+        }
+
+
+
+
+        tr:first-of-type td, tr:last-of-type td{
+            background-color: black;
+            border: 1px solid white;
+        }
+        tr:not(first-of-type) td, tr:not(last-of-type) td{
+            border: 1px solid black;
+        }
+        tr:nth-child(2) td:not(:last-of-type):not(:first-of-type){
+           border-top: none;
+        }
+        tr:nth-child(8) td:not(:last-of-type):not(:first-of-type){
+           border-top: none;
+        }
+        
+        
+    </style>
+    
+    
+    <table id='sakktabla' cellspacing=0>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    
+    </table>
+
+    <script>
+        
+        var x = document.getElementsByTagName('td').length;
+        //var r = Math.floor(Math.random()*16777215);
+
+        if(r%3==0){
+            //MINDEN RANDOM
+            for (var i = 0; i<x; i++) {
+                var randomColor = Math.floor(Math.random()*16777215).toString(16);
+
+                document.getElementsByTagName('td')[i].style.backgroundColor = "#" + randomColor;
+                
+            }
+        }else if(r%2==0){
+            //FEKETE RANDOM
+            for (var i = 0; i<8; i++) {
+                for(var j = 0; j<8; j++){
+                    if (i%2 == 0) {
+                        if (j%2==0) {
+                            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                            document.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.backgroundColor = "#" + randomColor;
+                        }
+                    }
+                    else{
+                        if (j%2!=0) {
+                            var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                            document.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.backgroundColor = "#" + randomColor;
+                        }
+                    }
+                }
+            }
+        }else{
+        var randomColor1 = Math.floor(Math.random()*16777215).toString(16);
+        var randomColor2 = Math.floor(Math.random()*16777215).toString(16);
+        for (var i = 0; i<8; i++) {
+            for(var j = 0; j<8; j++){
+                if (i%2 == 0) {
+                    if (j%2==0) {
+                        
+                        document.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.backgroundColor = "#" + randomColor1;
+                    }
+                    else{
+                        document.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.backgroundColor = "#" + randomColor2;
+                    }
+                }
+                else{
+                    if (j%2!=0) {
+                        
+                        document.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.backgroundColor = "#" + randomColor1;
+                    }
+                    else{
+                        document.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.backgroundColor = "#" + randomColor2;
+                    }
+                }
+            }
+        }
+        }
+        setTimeout(function() {
+            location.reload();
+        }, 700);
+        
+    </script>
+</body>
+</html>
